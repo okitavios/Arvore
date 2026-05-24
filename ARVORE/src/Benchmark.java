@@ -1,3 +1,6 @@
+import java.util.Random;
+import java.util.random.*;
+
 public class Benchmark {
 
     private static final long SEED = 12345L;
@@ -10,13 +13,22 @@ public class Benchmark {
         AVLRouterTree avl = new AVLRouterTree();
         RedBlackRouterTree rbt = new RedBlackRouterTree();
 
+        long StAVL = calculateStAVL(avl, rules);
+        long StRBT = calculateStRbt(rbt, rules);
 
         long timeAVL = calculateTimeAVL(avl, rules);
         long timeRBT = calculateTimeRbt(rbt, rules);
 
 
+
+        System.out.println("Tempo consumido pela busca AVL:" + StAVL + "ns");
+        System.out.println("Tempo consumido pela busca RBT:" + StRBT + "ns");
+
+
         System.out.println("Tempo consumido pela inserção AVL:" + timeAVL + "ns");
         System.out.println("Tempo consumido pela inserção RBT:" + timeRBT + "ns");
+
+
     
     }
 
@@ -94,6 +106,22 @@ public class Benchmark {
                 rules[i] = new PacketRule(id, ipOrigem, ipDestino, prioridade);
             }
   
+            return rules;
+        }
+
+    private static PacketRule[] generateRulesWithSeed() {
+            PacketRule[] rules = new PacketRule[NUM_RULES];
+            Random random = new Random(SEED);
+
+            for (int i = 0; i < NUM_RULES; i++) {
+                int id = i + 1;
+                String ipOrigem = "10.0.0." + random.nextInt(255);
+                String ipDestino = "172.16.0." + random.nextInt(255);
+                int prioridade = random.nextInt(NUM_RULES);
+
+                rules[i] = new PacketRule(id, ipOrigem, ipDestino, prioridade);
+            }
+
             return rules;
         }
 }

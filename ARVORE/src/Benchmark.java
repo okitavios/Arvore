@@ -5,7 +5,6 @@ public class Benchmark {
 
 
     public static void main(String[] args) {
-        public static void main(String[] args) {
         PacketRule[] regras = generateRules();
 
         AVLRouterTree avl = new AVLRouterTree();
@@ -25,7 +24,7 @@ public class Benchmark {
 
         System.out.println("Tempo consumido para inserção: " + insertionTimeAvl)
 
-    }
+    
     }
 
     private static PacketRule[] generateRules(){

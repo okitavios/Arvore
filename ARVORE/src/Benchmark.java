@@ -9,6 +9,14 @@ public class Benchmark {
 
         AVLRouterTree avl = new AVLRouterTree();
         RedBlackRouterTree rbt = new RedBlackRouterTree();
+
+
+        long timeAVL = calculateTimeAVL(avl, rules);
+        long timeRBT = calculateTimeRbt(rbt, rules);
+
+
+        System.out.println("Tempo consumido pela inserção AVL:" + timeAVL + "ns");
+        System.out.println("Tempo consumido pela inserção RBT:" + timeRBT + "ns");
     
     }
 
@@ -23,7 +31,7 @@ public class Benchmark {
         long  insertionFinal = System.nanoTime();
         long  insertionTime = insertionFinal - insertionInitial;
 
-        return InsertionTime;
+        return insertionTime;
 
     }
 

@@ -383,6 +383,6 @@ public class RedBlackRouterTree {
     }
 
     private boolean getColor(Node node) {
-        return node == null ? BLACK : node.color;
+        return node == null ? BLACK : node.color ;
     }
 }

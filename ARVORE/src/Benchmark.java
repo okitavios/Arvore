@@ -36,10 +36,23 @@ public class Benchmark {
         
 
 
-        System.out.println("Tempo consumido para inserção: " + insertionTimeAvl + "ns");
-        System.out.println("Tempo consumido para inserção: " + insertionTimeRbt + "ns");
+        System.out.println("Tempo consumido para inserção AVL: " + insertionTimeAvl + "ns");
+        System.out.println("Tempo consumido para inserção RBT: " + insertionTimeRbt + "ns");
 
     
+    }
+
+    private static long calculateTimeAVL(AVLRouterTree avl, PacketRule[] regras) {
+        long  insertionInitialAvl = System.nanoTime();
+        
+
+        for (PacketRule regra : regras){
+            avl.insert(regra);
+        }
+
+        long  insertionFinalAvl = System.nanoTime();
+        long  insertionTimeAvl = insertionFinalAvl - insertionInitialAvl;
+
     }
 
     private static PacketRule[] generateRules(){

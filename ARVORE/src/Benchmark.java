@@ -20,7 +20,10 @@ public class Benchmark {
         }
 
         long  insertionFinalAvl = System.nanoTime();
-        long  insertionTimeAvl = System.nanoTime();
+        long  insertionTimeAvl = insertionFinalAvl - insertionInitialAvl;
+
+
+        System.out.println("Tempo consumido para inserção: " + insertionTimeAvl)
 
     }
     }

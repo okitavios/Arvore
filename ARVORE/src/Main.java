@@ -10,13 +10,14 @@ public class Main {
 
 
         long  insertionInitialAvl = System.nanoTime();
-
+        long  insertionFinalAvl = System.nanoTime();
+        long  insertionTimeAvl = System.nanoTime();
 
         for (PacketRule regra : regras){
             avl.insert(regra);
         }
 
-        
+
 
 
     }

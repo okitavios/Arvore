@@ -9,7 +9,15 @@ public class Main {
         RedBlackRouterTree rbt = new RedBlackRouterTree();
 
 
-        long  insertionInitialAvl = System.nanoTime()
+        long  insertionInitialAvl = System.nanoTime();
+
+
+        for (PacketRule regra : regras){
+            avl.insert(regra);
+        }
+
+        
+
 
     }
 }

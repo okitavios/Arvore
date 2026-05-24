@@ -14,6 +14,8 @@ public class Benchmark {
                 String ipOrigem = "10.0.0." + (id % 255);
                 String ipDestino = "172.16.0." + (id % 255);
                 int prioridade = id;
+
+                regras[i] = new PacketRule(id, ipOrigem, ipDestino, prioridade);
             }
   
             return rules;

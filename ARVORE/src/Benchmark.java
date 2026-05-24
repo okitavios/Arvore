@@ -50,6 +50,37 @@ public class Benchmark {
 
     }
 
+    private static long calculateStAVL(AVLRouterTree avl, PacketRule[] rules) {
+        long  insertionInitial = System.nanoTime();
+        
+
+        for (PacketRule rule : rules){
+            avl.search(rule);
+        }
+
+        long  insertionFinal = System.nanoTime();
+        long  insertionTime = insertionFinal - insertionInitial;
+
+        return insertionTime;
+
+    }
+
+    private static long calculateStRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
+        long  insertionInitial = System.nanoTime();
+        
+
+        for (PacketRule rule : rules){
+            rbt.search(rule);
+        }
+
+        long  insertionFinal = System.nanoTime();
+        long  insertionTime = insertionFinal - insertionInitial;
+
+        return insertionTime;
+
+    }
+
+    
 
     private static PacketRule[] generateRules(){
             PacketRule[] rules = new PacketRule[NUM_RULES];

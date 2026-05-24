@@ -13,7 +13,7 @@ public class Benchmark {
     }
 
     private static long calculateTimeAVL(AVLRouterTree avl, PacketRule[] rules) {
-        long  insertionInitialAvl = System.nanoTime();
+        long  insertionInitial = System.nanoTime();
         
 
         for (PacketRule rule : rules){
@@ -23,9 +23,11 @@ public class Benchmark {
         long  insertionFinal = System.nanoTime();
         long  insertionTime = insertionFinal - insertionInitial;
 
+        return InsertionTime;
+
     }
 
-    private static long calculateTimeAVL(AVLRouterTree rbt, PacketRule[] rules) {
+    private static long calculateTimeRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
         long  insertionInitial = System.nanoTime();
         
 
@@ -35,6 +37,8 @@ public class Benchmark {
 
         long  insertionFinal = System.nanoTime();
         long  insertionTime = insertionFinal - insertionInitial;
+
+        return insertionTime;
 
     }
 

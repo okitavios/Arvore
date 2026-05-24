@@ -8,5 +8,8 @@ public class Main {
         AVLRouterTree avl = new AVLRouterTree();
         RedBlackRouterTree rbt = new RedBlackRouterTree();
 
+
+        long  insertionInitialAvl = System.nanoTime()
+
     }
 }

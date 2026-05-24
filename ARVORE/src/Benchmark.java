@@ -12,12 +12,12 @@ public class Benchmark {
     
     }
 
-    private static long calculateTimeAVL(AVLRouterTree avl, PacketRule[] regras) {
+    private static long calculateTimeAVL(AVLRouterTree avl, PacketRule[] rules) {
         long  insertionInitialAvl = System.nanoTime();
         
 
-        for (PacketRule rules : regras){
-            avl.insert(rules);
+        for (PacketRule rule : rules){
+            avl.insert(rule);
         }
 
         long  insertionFinal = System.nanoTime();
@@ -25,12 +25,12 @@ public class Benchmark {
 
     }
 
-    private static long calculateTimeAVL(AVLRouterTree rbt, PacketRule[] regras) {
+    private static long calculateTimeAVL(AVLRouterTree rbt, PacketRule[] rules) {
         long  insertionInitial = System.nanoTime();
         
 
-        for (PacketRule rules : regras){
-            rbt.insert(rules);
+        for (PacketRule rule : rules){
+            rbt.insert(rule);
         }
 
         long  insertionFinal = System.nanoTime();

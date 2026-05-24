@@ -5,7 +5,13 @@ public class Benchmark {
 
 
     public static void main(String[] args) {
-        
+
+        private static PacketRule[] generateRules(){
+            PacketRule[] rules = new PacketRule[NUM_REGRAS];
+  
+            return rules;
+        }
+
 
 
     

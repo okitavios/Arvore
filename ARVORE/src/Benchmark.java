@@ -9,23 +9,6 @@ public class Benchmark {
 
         AVLRouterTree avl = new AVLRouterTree();
         RedBlackRouterTree rbt = new RedBlackRouterTree();
-
-
-        long  insertionInitialRbt = System.nanoTime();
-        
-
-        for (PacketRule regras : rules){
-            rbt.insert(regras);
-        }
-
-        long  insertionFinalRbt = System.nanoTime();
-        long  insertionTimeRbt = insertionFinalRbt - insertionInitialRbt;
-
-        
-
-
-        System.out.println("Tempo consumido para inserção RBT: " + insertionTimeRbt + "ns");
-
     
     }
 
@@ -37,10 +20,24 @@ public class Benchmark {
             avl.insert(rules);
         }
 
-        long  insertionFinalAvl = System.nanoTime();
-        long  insertionTimeAvl = insertionFinalAvl - insertionInitialAvl;
+        long  insertionFinal = System.nanoTime();
+        long  insertionTime = insertionFinal - insertionInitial;
 
     }
+
+    private static long calculateTimeAVL(AVLRouterTree rbt, PacketRule[] regras) {
+        long  insertionInitial = System.nanoTime();
+        
+
+        for (PacketRule rules : regras){
+            rbt.insert(rules);
+        }
+
+        long  insertionFinal = System.nanoTime();
+        long  insertionTime = insertionFinal - insertionInitial;
+
+    }
+
 
     private static PacketRule[] generateRules(){
             PacketRule[] rules = new PacketRule[NUM_RULES];

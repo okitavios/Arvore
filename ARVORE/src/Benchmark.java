@@ -22,7 +22,22 @@ public class Benchmark {
         long  insertionTimeAvl = insertionFinalAvl - insertionInitialAvl;
 
 
-        System.out.println("Tempo consumido para inserção: " + insertionTimeAvl);
+
+        long  insertionInitialRbt = System.nanoTime();
+        
+
+        for (PacketRule regra : regras){
+            rbt.insert(regra);
+        }
+
+        long  insertionFinalRbt = System.nanoTime();
+        long  insertionTimeRbt = insertionFinalRbt - insertionInitialRbt;
+
+        
+
+
+        System.out.println("Tempo consumido para inserção: " + insertionTimeAvl + "ns");
+        System.out.println("Tempo consumido para inserção: " + insertionTimeRbt + "ns");
 
     
     }

@@ -13,15 +13,14 @@ public class Benchmark {
 
 
         long  insertionInitialAvl = System.nanoTime();
-        long  insertionFinalAvl = System.nanoTime();
-        long  insertionTimeAvl = System.nanoTime();
+        
 
         for (PacketRule regra : regras){
             avl.insert(regra);
         }
 
-
-
+        long  insertionFinalAvl = System.nanoTime();
+        long  insertionTimeAvl = System.nanoTime();
 
     }
     }

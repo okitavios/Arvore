@@ -29,9 +29,9 @@ public class Benchmark {
         }
 
         long  insertionFinal = System.nanoTime();
-        long  insertionTime = insertionFinal - insertionInitial;
+        
 
-        return insertionTime;
+        return insertionFinal - insertionInitial;
 
     }
 
@@ -44,9 +44,9 @@ public class Benchmark {
         }
 
         long  insertionFinal = System.nanoTime();
-        long  insertionTime = insertionFinal - insertionInitial;
+        
 
-        return insertionTime;
+        return insertionFinal - insertionInitial;
 
     }
 
@@ -59,9 +59,9 @@ public class Benchmark {
         }
 
         long  insertionFinal = System.nanoTime();
-        long  insertionTime = insertionFinal - insertionInitial;
+        
 
-        return insertionTime;
+        return insertionFinal - insertionInitial;
 
     }
 
@@ -74,9 +74,9 @@ public class Benchmark {
         }
 
         long  insertionFinal = System.nanoTime();
-        long  insertionTime = insertionFinal - insertionInitial;
+        
 
-        return insertionTime;
+        return insertionFinal - insertionInitial;
 
     }
 

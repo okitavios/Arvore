@@ -1,5 +1,4 @@
 import java.util.Random;
-import java.util.random.*;
 
 public class Benchmark {
 
@@ -8,16 +7,16 @@ public class Benchmark {
 
 
     public static void main(String[] args) {
-        PacketRule[] rules = generateRules();
+        PacketRule[] ruleseed = generateRulesSeed();
 
         AVLRouterTree avl = new AVLRouterTree();
         RedBlackRouterTree rbt = new RedBlackRouterTree();
 
-        long StAVL = calculateStAVL(avl, rules);
-        long StRBT = calculateStRbt(rbt, rules);
+        long StAVL = calculateStAVL(avl, ruleseed);
+        long StRBT = calculateStRbt(rbt, ruleseed);
 
-        long timeAVL = calculateTimeAVL(avl, rules);
-        long timeRBT = calculateTimeRbt(rbt, rules);
+        long timeAVL = calculateTimeAVL(avl, ruleseed);
+        long timeRBT = calculateTimeRbt(rbt, ruleseed);
 
 
 
@@ -109,7 +108,7 @@ public class Benchmark {
             return rules;
         }
 
-    private static PacketRule[] generateRulesWithSeed() {
+    private static PacketRule[] generateRulesSeed() {
             PacketRule[] rules = new PacketRule[NUM_RULES];
             Random random = new Random(SEED);
 

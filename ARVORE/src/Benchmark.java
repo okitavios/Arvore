@@ -4,7 +4,27 @@ public class Benchmark {
     private static final int NUM_REGRAS = 100000;
 
 
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        public static void main(String[] args) {
+        PacketRule[] regras = generateRules();
+
+        AVLRouterTree avl = new AVLRouterTree();
+        RedBlackRouterTree rbt = new RedBlackRouterTree();
+
+
+        long  insertionInitialAvl = System.nanoTime();
+        long  insertionFinalAvl = System.nanoTime();
+        long  insertionTimeAvl = System.nanoTime();
+
+        for (PacketRule regra : regras){
+            avl.insert(regra);
+        }
+
+
+
+
+    }
+    }
 
     private static PacketRule[] generateRules(){
             PacketRule[] rules = new PacketRule[NUM_REGRAS];

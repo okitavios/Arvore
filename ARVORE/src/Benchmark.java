@@ -4,9 +4,9 @@ public class Benchmark {
     private static final int NUM_REGRAS = 100000;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {}
 
-        private static PacketRule[] generateRules(){
+    private static PacketRule[] generateRules(){
             PacketRule[] rules = new PacketRule[NUM_REGRAS];
 
             for (int i = 0; i < NUM_REGRAS; i++){
@@ -20,11 +20,6 @@ public class Benchmark {
   
             return rules;
         }
-
-
-
-    
-    }
 }
 
  

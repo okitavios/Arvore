@@ -22,7 +22,7 @@ public class Benchmark {
         long  insertionTimeAvl = insertionFinalAvl - insertionInitialAvl;
 
 
-        System.out.println("Tempo consumido para inserção: " + insertionTimeAvl)
+        System.out.println("Tempo consumido para inserção: " + insertionTimeAvl);
 
     
     }
@@ -36,7 +36,7 @@ public class Benchmark {
                 String ipDestino = "172.16.0." + (id % 255);
                 int prioridade = id;
 
-                regras[i] = new PacketRule(id, ipOrigem, ipDestino, prioridade);
+                rules[i] = new PacketRule(id, ipOrigem, ipDestino, prioridade);
             }
   
             return rules;

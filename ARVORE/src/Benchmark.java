@@ -174,7 +174,7 @@ public class Benchmark {
 
         private static PacketRule[] get20Percent(PacketRule[] rules) {
             int size = rules.length / 5;
-            PacketRule[] percentset = new PacketRule[size]
+            PacketRule[] percentset = new PacketRule[size];
 
             for(int i=0;i < size; i++){
                 percentset[i] = rules[i];

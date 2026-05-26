@@ -18,14 +18,29 @@ public class Benchmark {
         long timeAVL = calculateTimeAVL(avl, ruleseed);
         long timeRBT = calculateTimeRbt(rbt, ruleseed);
 
+        long RvRbt = calculateRvAvl(avl, ruleseed);
+        long RvAvl = calculateRvAvl(avl, ruleseed);
 
 
-        System.out.println("Tempo consumido pela busca AVL:" + StAVL + "ns");
+
+        /*System.out.println("Tempo consumido pela busca AVL:" + StAVL + "ns");
         System.out.println("Tempo consumido pela busca RBT:" + StRBT + "ns");
+
+        System.out.println("");
 
 
         System.out.println("Tempo consumido pela inserção AVL:" + timeAVL + "ns");
         System.out.println("Tempo consumido pela inserção RBT:" + timeRBT + "ns");
+        
+        System.out.println("");
+
+        System.out.println("Tempo consumido pela remoção AVL:" + RvAvl + "ns");
+        System.out.println("Tempo consumido pela remoção RBT:" + RvRbt + "ns");*/
+
+
+
+
+
 
 
     
@@ -91,7 +106,7 @@ public class Benchmark {
 
     }
 
-    private static long calculateRemoveRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
+    private static long calculateRvRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
         long  RemoveInitial = System.nanoTime();
         
 
@@ -106,12 +121,12 @@ public class Benchmark {
 
     }
 
-    private static long calculateRemoveAvl(AVLRouterTree avl, PacketRule[] rules) {
+    private static long calculateRvAvl(AVLRouterTree avl, PacketRule[] rules) {
         long  RemoveInitial = System.nanoTime();
         
 
         for (PacketRule rule : rules){
-            avl.remove(rule);
+            avl.delete(rule);
         }
 
         long  RemoveFinal = System.nanoTime();
@@ -153,6 +168,20 @@ public class Benchmark {
             }
 
             return rules;
+        }
+
+
+
+        private static PacketRule[] get20Percent(PacketRule[] rules) {
+            int size = rules.length / 5;
+            PacketRule[] percentset = new PacketRule[size]
+
+            for(int i=0;i < size; i++){
+                percentset[i] = rules[i];
+
+            }
+            return percentset;
+
         }
 }
 

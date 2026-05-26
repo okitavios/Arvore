@@ -106,7 +106,7 @@ public class Benchmark {
 
     }
 
-    private static long calculateRvRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
+    private static long calculateRemoveRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
         long  RemoveInitial = System.nanoTime();
         
 
@@ -121,7 +121,7 @@ public class Benchmark {
 
     }
 
-    private static long calculateRvAvl(AVLRouterTree avl, PacketRule[] rules) {
+    private static long calculateRemoveAvl(RedBlackRouterTree avl, PacketRule[] rules) {
         long  RemoveInitial = System.nanoTime();
         
 

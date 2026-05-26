@@ -18,7 +18,7 @@ public class Benchmark {
         long timeAVL = calculateTimeAVL(avl, ruleseed);
         long timeRBT = calculateTimeRbt(rbt, ruleseed);
 
-        long RvRbt = calculateRvAvl(avl, ruleseed);
+        long RvRbt = calculateRvRbt(rbt, ruleseed);
         long RvAvl = calculateRvAvl(avl, ruleseed);
 
 
@@ -106,7 +106,7 @@ public class Benchmark {
 
     }
 
-    private static long calculateRemoveRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
+    private static long calculateRvRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
         long  RemoveInitial = System.nanoTime();
         
 
@@ -121,7 +121,7 @@ public class Benchmark {
 
     }
 
-    private static long calculateRemoveAvl(RedBlackRouterTree avl, PacketRule[] rules) {
+    private static long calculateRvAvl(AVLRouterTree avl, PacketRule[] rules) {
         long  RemoveInitial = System.nanoTime();
         
 

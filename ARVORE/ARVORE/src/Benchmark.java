@@ -13,11 +13,11 @@ public class Benchmark {
         AVLRouterTree avl = new AVLRouterTree();
         RedBlackRouterTree rbt = new RedBlackRouterTree();
 
-        long StAVL = calculateStAVL(avl, ruleseed);
-        long StRBT = calculateStRbt(rbt, ruleseed);
-
         long timeAVL = calculateTimeAVL(avl, ruleseed);
         long timeRBT = calculateTimeRbt(rbt, ruleseed);
+
+        long StAVL = calculateStAVL(avl, ruleseed);
+        long StRBT = calculateStRbt(rbt, ruleseed);
 
         long RvRbt = calculateRvRbt(rbt, toRemove);
         long RvAvl = calculateRvAvl(avl, toRemove);
@@ -26,7 +26,7 @@ public class Benchmark {
 
 
 
-        /*System.out.println("Tempo consumido pela busca AVL:" + StAVL + "ns");
+       System.out.println("Tempo consumido pela busca AVL:" + StAVL + "ns");
         System.out.println("Tempo consumido pela busca RBT:" + StRBT + "ns");
 
         System.out.println("");
@@ -37,8 +37,11 @@ public class Benchmark {
         
         System.out.println("");
 
-        System.out.println("Tempo consumido pela remoção AVL:" + RvAvl + "ns");
+        /*System.out.println("Tempo consumido pela remoção AVL:" + RvAvl + "ns");
         System.out.println("Tempo consumido pela remoção RBT:" + RvRbt + "ns");*/
+
+        System.out.println("Tempo consumido pela remoção de 20% dos nós AVL:" + RvAvl + "ns");
+        System.out.println("Tempo consumido pela remoção de 20% dos nós RBT:" + RvRbt + "ns");
 
 
 

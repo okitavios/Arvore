@@ -8,6 +8,7 @@ public class Benchmark {
 
     public static void main(String[] args) {
         PacketRule[] ruleseed = generateRulesSeed();
+        PacketRule[] toRemove = get20Percent(ruleseed);
 
         AVLRouterTree avl = new AVLRouterTree();
         RedBlackRouterTree rbt = new RedBlackRouterTree();
@@ -18,8 +19,10 @@ public class Benchmark {
         long timeAVL = calculateTimeAVL(avl, ruleseed);
         long timeRBT = calculateTimeRbt(rbt, ruleseed);
 
-        long RvRbt = calculateRvRbt(rbt, ruleseed);
-        long RvAvl = calculateRvAvl(avl, ruleseed);
+        long RvRbt = calculateRvRbt(rbt, toRemove);
+        long RvAvl = calculateRvAvl(avl, toRemove);
+
+    
 
 
 

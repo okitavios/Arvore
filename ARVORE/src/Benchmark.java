@@ -91,6 +91,37 @@ public class Benchmark {
 
     }
 
+    private static long calculateRemoveRbt(RedBlackRouterTree rbt, PacketRule[] rules) {
+        long  RemoveInitial = System.nanoTime();
+        
+
+        for (PacketRule rule : rules){
+            rbt.remove(rule);
+        }
+
+        long  RemoveFinal = System.nanoTime();
+        
+
+        return RemoveFinal - RemoveInitial;
+
+    }
+
+    private static long calculateRemoveAvl(AVLRouterTree avl, PacketRule[] rules) {
+        long  RemoveInitial = System.nanoTime();
+        
+
+        for (PacketRule rule : rules){
+            avl.remove(rule);
+        }
+
+        long  RemoveFinal = System.nanoTime();
+        
+
+        return RemoveFinal - RemoveInitial;
+
+    }
+    
+
     
 
     private static PacketRule[] generateRules(){

@@ -1,4 +1,6 @@
-
+//correções: 
+//linha 240 - adicionar x = y.right;
+//linha 280 - adicionar if (node == null) return null;
 
 public class RedBlackRouterTree {
 

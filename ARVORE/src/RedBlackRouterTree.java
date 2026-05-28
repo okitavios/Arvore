@@ -242,7 +242,7 @@ public class RedBlackRouterTree {
             } else {
 
                 transplant(y, y.right);
-
+                x = y.right;
                 y.right = z.right;
                 y.right.parent = y;
             }
@@ -275,7 +275,7 @@ public class RedBlackRouterTree {
     }
 
     private Node minimum(Node node) {
-
+        if (node == null) return null;
         while (node.left != null)
             node = node.left;
 

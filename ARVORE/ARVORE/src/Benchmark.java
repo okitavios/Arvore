@@ -6,7 +6,7 @@ public class Benchmark {
     private static final int NUM_RULES = 100000;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         //   Teste com Seed
         PacketRule[] ruleseed = generateRulesSeed();
@@ -46,9 +46,15 @@ public class Benchmark {
 
         //   Teste sem Seed
         int[] volumes = {10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000};
-        PacketRule[] Rules = generateRules();
+        PacketRule[] ruless = generateRules();
 
         java.io.PrintWriter writer = new java.io.PrintWriter("resultados.csv");
+        writer.println("volume,insercao_avl,insercao_rbt,busca_avl,busca_rbt,remocao_avl,remocao_rbt");
+
+        for (int vol : volumes) {
+        PacketRule[] rules = java.util.Arrays.copyOfRange(ruless, 0, vol);
+    }
+
 
 
 
@@ -155,7 +161,7 @@ public class Benchmark {
     
 
     private static PacketRule[] generateRules(){
-            PacketRule[] rules = new PacketRule[NUM_RULES];
+            PacketRule[] ruless = new PacketRule[NUM_RULES];
 
             for (int i = 0; i < NUM_RULES; i++){
                 int id = i + 1;
@@ -163,10 +169,10 @@ public class Benchmark {
                 String ipDestino = "172.16.0." + (id % 255);
                 int prioridade = id;
 
-                rules[i] = new PacketRule(id, ipOrigem, ipDestino, prioridade);
+                ruless[i] = new PacketRule(id, ipOrigem, ipDestino, prioridade);
             }
   
-            return rules;
+            return ruless;
         }
 
     private static PacketRule[] generateRulesSeed() {

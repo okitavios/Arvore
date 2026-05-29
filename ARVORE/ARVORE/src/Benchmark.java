@@ -67,8 +67,13 @@ public class Benchmark {
         long rAVL = calculateRvAvl(avl, toRemove);
         long rRBT = calculateRvRbt(rbt, toRemove);
 
+        writer.println(vol + "," + tAVL + "," + tRBT + "," + sAVL + "," + sRBT + "," + rAVL + "," + rRBT);
+        System.out.println("Volume " + vol + " concluído.");
+
     }
 
+    writer.close();
+    System.out.println("Resultados salvos em resultados.csv")
 
 
 

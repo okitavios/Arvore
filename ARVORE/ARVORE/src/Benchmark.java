@@ -73,7 +73,7 @@ public class Benchmark {
     }
 
     writer.close();
-    System.out.println("Resultados salvos em resultados.csv")
+    System.out.println("Resultados salvos em resultados.csv");
 
 
 

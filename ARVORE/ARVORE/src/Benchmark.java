@@ -10,7 +10,7 @@ public class Benchmark {
 
         //   Teste com Seed
         PacketRule[] ruleseed = generateRulesSeed();
-        PacketRule[] toRemove = get20Percent(ruleseed);
+        PacketRule[] toRemoveSeed = get20Percent(ruleseed);
 
         AVLRouterTree avl1 = new AVLRouterTree();
         RedBlackRouterTree rbt1 = new RedBlackRouterTree();
@@ -21,8 +21,8 @@ public class Benchmark {
         long StAVL = calculateStAVL(avl1, ruleseed);
         long StRBT = calculateStRbt(rbt1, ruleseed);
 
-        long RvRbt = calculateRvRbt(rbt1, toRemove);
-        long RvAvl = calculateRvAvl(avl1, toRemove);
+        long RvRbt = calculateRvRbt(rbt1, toRemoveSeed);
+        long RvAvl = calculateRvAvl(avl1, toRemoveSeed);
 
     
 
@@ -53,6 +53,20 @@ public class Benchmark {
 
         for (int vol : volumes) {
         PacketRule[] rules = java.util.Arrays.copyOfRange(ruless, 0, vol);
+
+
+        PacketRule[] toRemove = get20Percent(rules);
+
+        AVLRouterTree avl = new AVLRouterTree();
+        RedBlackRouterTree rbt = new RedBlackRouterTree();
+
+        long tAVL = calculateTimeAVL(avl, rules);
+        long tRBT = calculateTimeRbt(rbt, rules);
+        long sAVL = calculateStAVL(avl, rules);
+        long sRBT = calculateStRbt(rbt, rules);
+        long rAVL = calculateRvAvl(avl, toRemove);
+        long rRBT = calculateRvRbt(rbt, toRemove);
+
     }
 
 

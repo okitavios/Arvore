@@ -7,20 +7,22 @@ public class Benchmark {
 
 
     public static void main(String[] args) {
+
+        //   Teste com Seed
         PacketRule[] ruleseed = generateRulesSeed();
         PacketRule[] toRemove = get20Percent(ruleseed);
 
-        AVLRouterTree avl = new AVLRouterTree();
-        RedBlackRouterTree rbt = new RedBlackRouterTree();
+        AVLRouterTree avl1 = new AVLRouterTree();
+        RedBlackRouterTree rbt1 = new RedBlackRouterTree();
 
-        long timeAVL = calculateTimeAVL(avl, ruleseed);
-        long timeRBT = calculateTimeRbt(rbt, ruleseed);
+        long timeAVL = calculateTimeAVL(avl1, ruleseed);
+        long timeRBT = calculateTimeRbt(rbt1, ruleseed);
 
-        long StAVL = calculateStAVL(avl, ruleseed);
-        long StRBT = calculateStRbt(rbt, ruleseed);
+        long StAVL = calculateStAVL(avl1, ruleseed);
+        long StRBT = calculateStRbt(rbt1, ruleseed);
 
-        long RvRbt = calculateRvRbt(rbt, toRemove);
-        long RvAvl = calculateRvAvl(avl, toRemove);
+        long RvRbt = calculateRvRbt(rbt1, toRemove);
+        long RvAvl = calculateRvAvl(avl1, toRemove);
 
     
 
@@ -31,17 +33,21 @@ public class Benchmark {
 
         System.out.println("");
 
-
         System.out.println("Tempo consumido pela inserção AVL:" + timeAVL + "ns");
         System.out.println("Tempo consumido pela inserção RBT:" + timeRBT + "ns");
         
         System.out.println("");
 
-        /*System.out.println("Tempo consumido pela remoção AVL:" + RvAvl + "ns");
-        System.out.println("Tempo consumido pela remoção RBT:" + RvRbt + "ns");*/
 
         System.out.println("Tempo consumido pela remoção de 20% dos nós AVL:" + RvAvl + "ns");
         System.out.println("Tempo consumido pela remoção de 20% dos nós RBT:" + RvRbt + "ns");
+
+
+
+        //   Teste sem Seed
+
+
+
 
 
 

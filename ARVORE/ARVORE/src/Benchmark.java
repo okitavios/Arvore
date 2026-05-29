@@ -45,7 +45,10 @@ public class Benchmark {
 
 
         //   Teste sem Seed
+        int[] volumes = {10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000};
+        PacketRule[] Rules = generateRules();
 
+        java.io.PrintWriter writer = new java.io.PrintWriter("resultados.csv");
 
 
 
